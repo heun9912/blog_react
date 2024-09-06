@@ -1,0 +1,121 @@
+/* 전체 레이아웃 */
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* 헤더 */
+header {
+  background-color: #2db400;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* 로고와 네비게이션을 세로로 배치 */
+}
+
+/* 로고 */
+.logo {
+  margin-bottom: 10px; /* 로고와 메뉴 사이 간격 */
+}
+
+/* 네비게이션 바 */
+nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: #2db400;
+  font-weight: bold;
+}
+
+/* 메인 콘텐츠 */
+main {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 180px);
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* 아이템 간 간격 조정 */
+}
+
+article {
+  flex: 1 1 calc(25% - 20px); /* 4개씩 나열되도록 설정, 간격을 고려한 비율 */
+  box-sizing: border-box; /* 여백과 테두리를 포함하여 사이즈 조정 */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+article p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* 푸터 */
+footer {
+  background-color: #f1f3f5;
+  color: #868e96;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+/* 반응형 레이아웃 */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .main-container {
+    flex-direction: column; /* 작은 화면에서는 세로로 배치 */
+    gap: 10px;
+  }
+
+  article {
+    flex: 1 1 100%; /* 세로로 배치될 때는 전체 너비 사용 */
+  }
+}
